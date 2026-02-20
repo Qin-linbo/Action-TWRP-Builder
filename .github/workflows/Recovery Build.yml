@@ -125,7 +125,8 @@ jobs:
            path="device/oneplus/op60edl1"
            name="qinlinbo/oneplus_ace5_ultra_device_tree"
            version="master"/>
-        </manifest>  
+        </manifest>
+        EOF
         repo sync -j$(nproc --all) --force-sync
       working-directory: workspace
 
