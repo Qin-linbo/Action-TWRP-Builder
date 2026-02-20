@@ -116,6 +116,16 @@ jobs:
 
     - name: Repo Sync
       run: |
+        mkdir ./repo/local_manifests
+        touch ./repo/local_manifests/roomservice.xml
+        cat >./repo/local_manifests/roomservice.xml<<EOF
+        <?xml version="1.0" encoding="UTF-8"?>
+        <manifest>
+         <project
+           path="device/oneplus/op60edl1"
+           name="qinlinbo/oneplus_ace5_ultra_device_tree"
+           version="master"/>
+        </manifest>  
         repo sync -j$(nproc --all) --force-sync
       working-directory: workspace
 
